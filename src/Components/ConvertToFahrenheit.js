@@ -11,7 +11,8 @@ const ConvertToFahrenheit = () => {
      setError('Please enter a temperature value');
      return;
    }
-   convertCelsiusToFahrenheit(celsius)
+
+  convertCelsiusToFahrenheit(celsius)
      .then((response) => {
        setResult(response.data);
        setError(null);
@@ -21,7 +22,8 @@ const ConvertToFahrenheit = () => {
        setError('Error converting temperature');
      });
  };
- return (
+
+return (
 <div className='res'>
 <h2>Convert Celsius to Fahrenheit</h2>
 <input
@@ -36,7 +38,7 @@ const ConvertToFahrenheit = () => {
      />
 <button onClick={handleConvert}>Convert</button>
      {error && <div className="error">{error}</div>}
-     {result && <div className="result">Result: {result}</div>}
+     {result && <div className="result-box"><div className="result">Result: {result}</div></div>}
 </div>
  );
 };

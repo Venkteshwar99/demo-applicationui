@@ -4,6 +4,7 @@ const ConvertToCelsius = () => {
  const [fahrenheit, setFahrenheit] = useState('');
  const [result, setResult] = useState(null);
  const [error, setError] = useState(null);
+
  const handleConvert = () => {
    if (fahrenheit.trim() === '') {
      setError('Please enter a temperature value');
@@ -19,6 +20,7 @@ const ConvertToCelsius = () => {
        setError('Error converting temperature');
      });
  };
+
  return (
 <div className='res'>
 <h2>Convert Fahrenheit to Celsius</h2>
@@ -34,7 +36,7 @@ const ConvertToCelsius = () => {
      />
 <button onClick={handleConvert}>Convert</button>
      {error && <div className="error">{error}</div>}
-     {result && <div className="result">Result: {result}</div>}
+     {result && <div className="result-box"><div className="result">Result: {result}</div></div>}
 </div>
  );
 };
